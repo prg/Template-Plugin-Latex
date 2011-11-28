@@ -46,7 +46,7 @@ our $DEBUG    = 0 unless defined $DEBUG;
 our $ERROR    = '';
 our $FILTER   = 'latex';        # default filter name
 our $FORMAT   = '';             # output format (auto-detect if unset)
-our @PROGRAMS = qw( latex pdflatex bibtex makeindex dvips ps2pdf );
+our @PROGRAMS = qw( latex pdflatex bibtex makeindex dvips ps2pdf xelatex );
 
 
 sub new {
@@ -124,6 +124,10 @@ sub makeindex_path {
     return LaTeX::Driver->program_path('makeindex', @_);
 }
 
+sub xelatex_path {
+    my $class = shift;
+    return LaTeX::Driver->program_path('xelatex', @_);
+}
 
 #------------------------------------------------------------------------
 # latex_paths()
@@ -137,7 +141,7 @@ sub latex_paths {
         my $args = ref $_[0] eq 'HASH' ? shift : { @_ };
 
         LaTeX::Driver->program_path($_, $args->{$_})
-            for qw( latex pdflatex bibtex makeindex dvips ps2pdf );
+            for qw( latex pdflatex bibtex makeindex dvips ps2pdf xelatex );
     }
     else {
         return {
