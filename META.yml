@@ -1,0 +1,23 @@
+--- #YAML:1.0
+name:               Template-Plugin-Latex
+version:            3.02
+abstract:           Latex support for the Template Toolkit
+author:
+    - Andrew Ford <a.ford@ford-mason.co.uk>
+license:            unknown
+distribution_type:  module
+configure_requires:
+    ExtUtils::MakeMaker:  0
+requires:
+    LaTeX::Driver:  0.07
+    LaTeX::Encode:  0.02
+    LaTeX::Table:   0
+    Template:       2.16
+no_index:
+    directory:
+        - t
+        - inc
+generated_by:       ExtUtils::MakeMaker version 6.48
+meta-spec:
+    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
+    version:  1.4
